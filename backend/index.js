@@ -7,9 +7,7 @@ const AdminRoute=require('./router/AdminRoute')
 const TransactionRoute=require('./router/TransactionRoute')
 const chatRoute=require('./router/ChatRoute')
 app.use(cors({
-  origin: 'https://bank-front-eight.vercel.app',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
+  origin: 'https://bank-front-eight.vercel.app/',
 }));
 app.use(express.json())
 app.use('/api/auth',Authroute)
