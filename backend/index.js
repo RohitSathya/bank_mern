@@ -6,7 +6,11 @@ const Authroute=require('./router/AuthRoute')
 const AdminRoute=require('./router/AdminRoute')
 const TransactionRoute=require('./router/TransactionRoute')
 const chatRoute=require('./router/ChatRoute')
-app.use(cors())
+app.use(cors({
+  origin: 'https://bank-front-eight.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+}));
 app.use(express.json())
 app.use('/api/auth',Authroute)
 app.use('/api/admin',AdminRoute)
