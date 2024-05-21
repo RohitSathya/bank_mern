@@ -6,19 +6,12 @@ const Authroute=require('./router/AuthRoute')
 const AdminRoute=require('./router/AdminRoute')
 const TransactionRoute=require('./router/TransactionRoute')
 const chatRoute=require('./router/ChatRoute')
-app.use(express.json())
 app.use(cors())
+app.use(express.json())
 app.use('/api/auth',Authroute)
 app.use('/api/admin',AdminRoute)
 app.use('/api/transaction',TransactionRoute)
 app.use('/api/chat',chatRoute)
-
-app.use(cors({
-  origin: 'https://bank-front-eight.vercel.app',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-}));
-
 
 
 mongoose.connect('mongodb+srv://admin:sunsetwest1234RRR@royoapi.3qmdrjq.mongodb.net/Bank?retryWrites=true&w=majority&appName=RoyoApi').then(()=>{
