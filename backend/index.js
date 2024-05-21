@@ -26,7 +26,7 @@ const io=socketio(server,{
 })
 
 const corsOptions = {
-  origin: 'https://mern-bank-managementfront-ckyosgqya-rohits-projects-a5c6d24a.vercel.app',
+  origin: 'https://bank-front-eight.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 };
