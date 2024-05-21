@@ -24,6 +24,18 @@ const io=socketio(server,{
     
   },
 })
+
+const corsOptions = {
+  origin: 'https://mern-bank-managementfront-ckyosgqya-rohits-projects-a5c6d24a.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
+// Handle preflight requests
+app.options('*', cors(corsOptions));
+
 const transport=nodemailer.createTransport({
   service:"gmail",
   auth:{
