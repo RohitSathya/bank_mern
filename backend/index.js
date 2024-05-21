@@ -14,7 +14,11 @@ app.use('/api/admin',AdminRoute)
 app.use('/api/transaction',TransactionRoute)
 app.use('/api/chat',chatRoute)
 
-
+app.use(cors({
+  origin: 'https://bank-front-eight.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+}));
 const transport=nodemailer.createTransport({
   service:"gmail",
   auth:{
